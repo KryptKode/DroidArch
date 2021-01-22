@@ -46,6 +46,6 @@ dependencies {
     androidTestImplementation(Libs.androidx_test_ext_junit)
     androidTestImplementation(Libs.espresso_core)
 
-    testImplementation(project(BuildModules.Commons.testShared))
+    testImplementation(project(BuildModules.Common.testShared))
     testImplementation(Libs.mockwebserver)
 }

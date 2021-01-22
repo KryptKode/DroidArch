@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    implementation(project(BuildModules.Commons.androidShared))
+    implementation(project(BuildModules.Common.androidShared))
 
     implementation(Libs.kotlinx_coroutines_android)
     implementation(Libs.kotlinx_coroutines_core)
@@ -20,5 +20,5 @@ dependencies {
     implementation(Libs.lifecycle_viewmodel_ktx)
     implementation(Libs.lifecycle_common_java8)
 
-    implementation("com.github.florent37:inline-activity-result-kotlin:1.0.4")
+    implementation(Libs.inline_activity_result_kotlin)
 }

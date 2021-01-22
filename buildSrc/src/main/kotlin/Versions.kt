@@ -1,3 +1,4 @@
+import kotlin.String
 import org.gradle.plugin.use.PluginDependenciesSpec
 import org.gradle.plugin.use.PluginDependencySpec
 
@@ -29,7 +30,7 @@ object Versions {
 
     const val androidx_work: String = "2.4.0"
 
-    const val com_android_tools_build_gradle: String = "4.1.1"
+    const val com_android_tools_build_gradle: String = "4.1.1" // available: "4.1.2"
 
     const val androidx_test_ext_junit: String = "1.1.2"
 
@@ -37,19 +38,23 @@ object Versions {
 
     const val de_fayard_buildsrcversions_gradle_plugin: String = "0.7.0"
 
-    const val kotlin_scripting_compiler_embeddable: String = "1.4.21" // available: "1.4.21-2"
+    const val kotlin_scripting_compiler_embeddable: String = "1.4.21"
 
-    const val kotlin_annotation_processing_gradle: String = "1.4.21" // available: "1.4.21-2"
+    const val kotlin_annotation_processing_gradle: String = "1.4.21"
+
+    const val inline_activity_result_kotlin: String = "1.0.4"
 
     const val hilt_android_gradle_plugin: String = "2.28.3-alpha"
 
-    const val kotlin_parcelize_compiler: String = "1.4.21" // available: "1.4.21-2"
+    const val kotlin_parcelize_compiler: String = "1.4.21"
 
-    const val kotlin_parcelize_runtime: String = "1.4.21" // available: "1.4.21-2"
+    const val kotlin_parcelize_runtime: String = "1.4.21"
 
     const val hilt_android_compiler: String = "2.30.1-alpha"
 
-    const val kotlin_gradle_plugin: String = "1.4.21" // available: "1.4.21-2"
+    const val kotlin_gradle_plugin: String = "1.4.21"
+
+    const val leakcanary_android: String = "2.6"
 
     const val pageindicatorview: String = "1.0.3"
 
@@ -69,6 +74,8 @@ object Versions {
 
     const val javax_inject: String = "1"
 
+    const val recyclerview: String = "1.1.0"
+
     const val lint_gradle: String = "27.1.1"
 
     const val viewbinding: String = "4.1.1"
@@ -81,7 +88,7 @@ object Versions {
 
     const val material: String = "1.2.1"
 
-    const val ktlint: String = "0.38.1" // available: "0.40.0"
+    const val ktlint: String = "0.38.1"
 
     const val timber: String = "4.7.1"
 
@@ -96,7 +103,7 @@ object Versions {
      * See issue 19: How to update Gradle itself?
      * https://github.com/jmfayard/buildSrcVersions/issues/19
      */
-    const val gradleLatestVersion: String = "6.7.1"
+    const val gradleLatestVersion: String = "6.8"
 }
 
 /**
