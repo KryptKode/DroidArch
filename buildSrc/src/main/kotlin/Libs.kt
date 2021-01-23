@@ -27,6 +27,30 @@ object Libs {
             Versions.org_jetbrains_kotlinx_kotlinx_coroutines
 
     /**
+     * https://developer.android.com/testing
+     */
+    const val espresso_contrib: String = "androidx.test.espresso:espresso-contrib:" +
+            Versions.androidx_test_espresso
+
+    /**
+     * https://developer.android.com/testing
+     */
+    const val espresso_core: String = "androidx.test.espresso:espresso-core:" +
+            Versions.androidx_test_espresso
+
+    /**
+     * https://developer.android.com/testing
+     */
+    const val espresso_idling_resource: String =
+            "androidx.test.espresso:espresso-idling-resource:" + Versions.androidx_test_espresso
+
+    /**
+     * https://developer.android.com/testing
+     */
+    const val espresso_intents: String = "androidx.test.espresso:espresso-intents:" +
+            Versions.androidx_test_espresso
+
+    /**
      * https://github.com/square/retrofit
      */
     const val converter_moshi: String = "com.squareup.retrofit2:converter-moshi:" +
@@ -109,6 +133,17 @@ object Libs {
     const val moshi_kotlin_codegen: String = "com.squareup.moshi:moshi-kotlin-codegen:" +
             Versions.com_squareup_moshi
 
+    /**
+     * https://developer.android.com/topic/libraries/architecture/index.html
+     */
+    const val paging_common: String = "androidx.paging:paging-common:" + Versions.androidx_paging
+
+    /**
+     * http://developer.android.com/tools/extras/support-library.html
+     */
+    const val paging_runtime_ktx: String = "androidx.paging:paging-runtime-ktx:" +
+            Versions.androidx_paging
+
     const val hilt_compiler: String = "androidx.hilt:hilt-compiler:" + Versions.androidx_hilt
 
     const val hilt_lifecycle_viewmodel: String = "androidx.hilt:hilt-lifecycle-viewmodel:" +
@@ -134,12 +169,27 @@ object Libs {
     /**
      * https://developer.android.com/topic/libraries/architecture/index.html
      */
+    const val room_testing: String = "androidx.room:room-testing:" + Versions.androidx_room
+
+    /**
+     * https://developer.android.com/topic/libraries/architecture/index.html
+     */
     const val work_runtime_ktx: String = "androidx.work:work-runtime-ktx:" + Versions.androidx_work
 
     /**
      * https://developer.android.com/topic/libraries/architecture/index.html
      */
     const val work_testing: String = "androidx.work:work-testing:" + Versions.androidx_work
+
+    /**
+     * http://mockk.io
+     */
+    const val mockk: String = "io.mockk:mockk:" + Versions.io_mockk
+
+    /**
+     * http://mockk.io
+     */
+    const val mockk_android: String = "io.mockk:mockk-android:" + Versions.io_mockk
 
     /**
      * https://developer.android.com/studio
@@ -152,6 +202,16 @@ object Libs {
      */
     const val androidx_test_ext_junit: String = "androidx.test.ext:junit:" +
             Versions.androidx_test_ext_junit
+
+    /**
+     * https://developer.android.com/testing
+     */
+    const val androidx_test_runner: String = "androidx.test:runner:" + Versions.androidx_test_runner
+
+    /**
+     * https://developer.android.com/testing
+     */
+    const val androidx_test_rules: String = "androidx.test:rules:" + Versions.androidx_test_rules
 
     /**
      * http://junit.org
@@ -214,10 +274,10 @@ object Libs {
             Versions.leakcanary_android
 
     /**
-     * http://developer.android.com/tools/extras/support-library.html
+     * https://kotlinlang.org/
      */
-    const val paging_runtime_ktx: String = "androidx.paging:paging-runtime-ktx:" +
-            Versions.paging_runtime_ktx
+    const val kotlin_test_junit: String = "org.jetbrains.kotlin:kotlin-test-junit:" +
+            Versions.kotlin_test_junit
 
     /**
      * https://github.com/romandanylyk/PageIndicatorView
@@ -235,12 +295,6 @@ object Libs {
      * https://github.com/hdodenhof/CircleImageView
      */
     const val circleimageview: String = "de.hdodenhof:circleimageview:" + Versions.circleimageview
-
-    /**
-     * https://developer.android.com/testing
-     */
-    const val espresso_core: String = "androidx.test.espresso:espresso-core:" +
-            Versions.espresso_core
 
     /**
      * https://kotlinlang.org/
@@ -310,11 +364,6 @@ object Libs {
      * https://developer.android.com/studio
      */
     const val aapt2: String = "com.android.tools.build:aapt2:" + Versions.aapt2
-
-    /**
-     * http://mockk.io
-     */
-    const val mockk: String = "io.mockk:mockk:" + Versions.mockk
 
     /**
      * http://github.com/google/truth

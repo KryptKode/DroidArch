@@ -12,4 +12,7 @@ abstract class UserRemoteKeysDao : BaseDao<UserRemoteKeys> {
 
     @Query("DELETE FROM user_remote_keys")
     abstract suspend fun clearRemoteKeys()
+
+    @Query("SELECT * FROM user_remote_keys")
+    abstract suspend fun getRemoteKeysAsList(): List<UserRemoteKeys>
 }

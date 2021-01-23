@@ -1,11 +1,12 @@
-package com.kryptkode.core.utils
+package com.kryptkode.core.cache
 
+import com.kryptkode.core.cache.keys.UserRemoteKeys
 import com.kryptkode.core.cache.user.DbUser
 import com.kryptkode.core.remote.entities.user.Location
 import com.kryptkode.core.remote.entities.user.UserDetailResponse
 import com.kryptkode.core.remote.entities.user.UserRemote
+import com.kryptkode.testshared.DataFactory.randomInt
 import com.kryptkode.testshared.DataFactory.randomString
-import java.io.File
 import java.util.Calendar
 import java.util.Date
 
@@ -44,7 +45,13 @@ object FakeDataFactory {
             randomString(),
             randomString(),
             randomString(),
-            Location(randomString(), randomString(), randomString()),
+            Location(
+                randomString(),
+                randomString(),
+                randomString(),
+                randomString(),
+                randomString()
+            ),
             SAMPLE_DATE,
             SAMPLE_DATE,
         )
@@ -60,15 +67,23 @@ object FakeDataFactory {
             randomString(),
             randomString(),
             randomString(),
-            Location(randomString(), randomString(), randomString()),
-            Date(),
-            Date(),
+            Location(
+                randomString(),
+                randomString(),
+                randomString(),
+                randomString(),
+                randomString()
+            ),
+            testDate,
+            testDate,
         )
     }
 
-    fun getJson(path: String): String {
-        val uri = this.javaClass.classLoader?.getResource(path)
-        val file = File(uri?.path ?: "")
-        return String(file.readBytes())
+    fun makeFakeUserRemoteKey(): UserRemoteKeys {
+        return UserRemoteKeys(
+            randomString(),
+            randomInt(),
+            randomInt()
+        )
     }
 }

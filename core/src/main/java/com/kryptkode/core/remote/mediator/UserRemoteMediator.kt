@@ -1,5 +1,6 @@
 package com.kryptkode.core.remote.mediator
 
+import androidx.annotation.VisibleForTesting
 import androidx.paging.ExperimentalPagingApi
 import androidx.paging.LoadType
 import androidx.paging.PagingState
@@ -45,8 +46,7 @@ class UserRemoteMediator @Inject constructor(
             }
 
             LoadType.APPEND -> {
-                val remoteKeys = getRemoteKeyForLastItem(state)
-                remoteKeys?.nextKey
+                getRemoteKeyForLastItem(state)?.nextKey
                     ?: throw InvalidObjectException("Remote key should not be null for $loadType")
             }
         }
@@ -85,17 +85,19 @@ class UserRemoteMediator @Inject constructor(
         }
     }
 
-    private suspend fun getRemoteKeyForLastItem(state: PagingState<Int, DbUser>): UserRemoteKeys? {
+    @VisibleForTesting
+    suspend fun getRemoteKeyForLastItem(state: PagingState<Int, DbUser>): UserRemoteKeys? {
         // Get the last page that was retrieved, that contained items.
         // From that last page, get the last item
-        return state.pages.lastOrNull() { it.data.isNotEmpty() }?.data?.lastOrNull()
+        return state.pages.lastOrNull { it.data.isNotEmpty() }?.data?.lastOrNull()
             ?.let { farmer ->
                 // Get the remote keys of the last item retrieved
                 database.userRemoteKeysDao().getRemoteKeysById(farmer.id)
             }
     }
 
-    private suspend fun getRemoteKeyForFirstItem(state: PagingState<Int, DbUser>): UserRemoteKeys? {
+    @VisibleForTesting
+    suspend fun getRemoteKeyForFirstItem(state: PagingState<Int, DbUser>): UserRemoteKeys? {
         // Get the first page that was retrieved, that contained items.
         // From that first page, get the first item
         return state.pages.firstOrNull { it.data.isNotEmpty() }?.data?.firstOrNull()
@@ -105,7 +107,8 @@ class UserRemoteMediator @Inject constructor(
             }
     }
 
-    private suspend fun getRemoteKeyClosestToCurrentPosition(
+    @VisibleForTesting
+    suspend fun getRemoteKeyClosestToCurrentPosition(
         state: PagingState<Int, DbUser>
     ): UserRemoteKeys? {
         // The paging library is trying to load data after the anchor position

@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "520d921cf89bb1f66190741cc1219d0f",
+    "identityHash": "edfbadd5f2eaa5cc4b8403534644efcf",
     "entities": [
       {
         "tableName": "users",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `lastName` TEXT NOT NULL, `firstName` TEXT NOT NULL, `email` TEXT NOT NULL, `title` TEXT NOT NULL, `picture` TEXT NOT NULL, `gender` TEXT NOT NULL, `phone` TEXT NOT NULL, `location` TEXT NOT NULL, `registerDate` TEXT, `dateOfBirth` TEXT, PRIMARY KEY(`id`))",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `lastName` TEXT NOT NULL, `firstName` TEXT NOT NULL, `email` TEXT NOT NULL, `title` TEXT NOT NULL, `picture` TEXT NOT NULL, `gender` TEXT NOT NULL, `phone` TEXT NOT NULL, `location` TEXT NOT NULL, `registerDate` INTEGER, `dateOfBirth` INTEGER, PRIMARY KEY(`id`))",
         "fields": [
           {
             "fieldPath": "id",
@@ -65,13 +65,13 @@
           {
             "fieldPath": "registerDate",
             "columnName": "registerDate",
-            "affinity": "TEXT",
+            "affinity": "INTEGER",
             "notNull": false
           },
           {
             "fieldPath": "dateOfBirth",
             "columnName": "dateOfBirth",
-            "affinity": "TEXT",
+            "affinity": "INTEGER",
             "notNull": false
           }
         ],
@@ -120,7 +120,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '520d921cf89bb1f66190741cc1219d0f')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'edfbadd5f2eaa5cc4b8403534644efcf')"
     ]
   }
 }

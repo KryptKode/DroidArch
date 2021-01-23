@@ -11,10 +11,19 @@ android {
                 arg("room.schemaLocation", "$projectDir/schemas")
             }
         }
+
+        testInstrumentationRunner("androidx.test.runner.AndroidJUnitRunner")
     }
 
     sourceSets {
         getByName("androidTest").assets.srcDirs("$projectDir/schemas")
+    }
+
+    packagingOptions {
+        exclude("**/attach_hotspot_windows.dll")
+        exclude("META-INF/licenses/**")
+        exclude("META-INF/AL2.0")
+        exclude("META-INF/LGPL2.1")
     }
 }
 
@@ -46,9 +55,29 @@ dependencies {
     implementation(Libs.moshi_kotlin)
     kapt(Libs.moshi_kotlin_codegen)
 
+    implementation(Libs.espresso_idling_resource)
+
     androidTestImplementation(Libs.androidx_test_ext_junit)
     androidTestImplementation(Libs.espresso_core)
+    androidTestImplementation(Libs.kotlin_test_junit)
+    androidTestImplementation(Libs.kotlinx_coroutines_test) {
+        exclude(group = "org.jetbrains.kotlinx", module = "kotlinx-coroutines-debug")
+    }
+    androidTestImplementation(Libs.androidx_test_runner)
+    androidTestImplementation(Libs.core_testing)
+    androidTestImplementation(Libs.espresso_contrib)
+    androidTestImplementation(Libs.espresso_intents)
+
+    androidTestImplementation(Libs.androidx_test_rules)
+
+    androidTestImplementation(Libs.androidx_test_ext_junit)
+    androidTestImplementation(Libs.mockk_android)
+    androidTestImplementation(Libs.room_testing)
+
+    androidTestImplementation(Libs.truth)
+    androidTestImplementation(project(BuildModules.Common.testShared))
 
     testImplementation(project(BuildModules.Common.testShared))
     testImplementation(Libs.mockwebserver)
+    testImplementation(Libs.paging_common)
 }
