@@ -1,4 +1,4 @@
-package com.kryptkode.swahpee
+package com.kryptkode.droidarch
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

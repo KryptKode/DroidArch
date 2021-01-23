@@ -11,7 +11,7 @@ android {
     compileSdkVersion(Config.compileSdk)
 
     defaultConfig {
-        applicationId("com.kryptkode.android.module.template")
+        applicationId("com.kryptkode.droidarch")
         minSdkVersion(Config.minSdk)
         targetSdkVersion(Config.targetSdk)
         versionCode = 1
@@ -34,6 +34,12 @@ android {
 }
 
 dependencies {
+
+    implementation(project(BuildModules.core))
+    implementation(project(BuildModules.navigation))
+    implementation(project(BuildModules.Common.androidShared))
+    implementation(project(BuildModules.Libs.baseMvi))
+    implementation(project(BuildModules.Features.users))
 
     implementation(Libs.kotlin_stdlib)
     implementation(Libs.core_ktx)

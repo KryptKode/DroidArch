@@ -7,7 +7,7 @@ object BuildModules {
     const val navigation = ":navigation"
 
     object Features {
-        const val home = ":features:home"
+        const val users = ":features:users"
     }
 
     object Common {

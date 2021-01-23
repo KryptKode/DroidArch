@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/swipe_refresh"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fillViewport="true">
+    android:layout_height="match_parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -35,9 +35,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:gravity="center"
-            android:text="@string/search_characters_screen_title"
+            android:text="@string/users_screen_title"
             android:textAppearance="@style/TextAppearance.App.H2"
-            app:layout_constraintBottom_toTopOf="@id/search_input_layout"
+            app:layout_constraintBottom_toTopOf="@id/title_text_view"
             app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
             app:layout_constraintTop_toBottomOf="@id/image"
@@ -45,48 +45,25 @@
             app:layout_constraintVertical_chainStyle="packed" />
 
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/search_input_layout"
-            style="@style/Widget.App.TextInputLayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            app:endIconMode="clear_text"
-            app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout.HintText"
-            app:layout_constraintBottom_toTopOf="@id/search_results_recycler_view"
-            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
-            app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@id/title_text_view">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/search_edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/search_hint_text"
-                android:inputType="text" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
         <com.kryptkode.commonandroid.customviews.EmptyRecyclerView
-            android:id="@+id/search_results_recycler_view"
+            android:id="@+id/users_recycler_view"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:layout_marginTop="32dp"
-            app:layout_constraintBottom_toBottomOf="@id/guidelineBottom"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="@id/guidelineBottom"
             app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@id/search_input_layout"
-            tools:itemCount="5"
-            tools:listitem="@layout/item_character" />
+            app:layout_constraintTop_toBottomOf="@id/title_text_view"
+            tools:itemCount="15"
+            tools:listitem="@layout/item_user" />
 
 
         <androidx.constraintlayout.widget.Group
             android:id="@+id/loading_group"
             android:layout_width="wrap_content"
-            android:visibility="invisible"
             android:layout_height="wrap_content"
+            android:visibility="invisible"
             app:constraint_referenced_ids="progress_bar,loading_text_view" />
 
 
@@ -97,7 +74,7 @@
             app:layout_constraintBottom_toTopOf="@id/loading_text_view"
             app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@id/search_input_layout"
+            app:layout_constraintTop_toBottomOf="@id/title_text_view"
             app:layout_constraintVertical_bias="0.3"
             app:layout_constraintVertical_chainStyle="packed" />
 
@@ -106,7 +83,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/searching_loading_indicator_text"
+            android:text="@string/loading_indicator_text"
             android:textAppearance="@style/TextAppearance.App.Body"
             app:layout_constraintBottom_toBottomOf="@id/guidelineBottom"
             app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
@@ -116,27 +93,27 @@
 
 
         <androidx.constraintlayout.widget.Group
-            android:id="@+id/search_hint_group"
+            android:id="@+id/empty_state_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="visible"
-            app:constraint_referenced_ids="search_hint_image,search_hint_text_view" />
+            app:constraint_referenced_ids="empty_state_image,empty_state_text_view" />
 
         <ImageView
-            android:id="@+id/search_hint_image"
+            android:id="@+id/empty_state_image"
             android:layout_width="36dp"
             android:layout_height="36dp"
             android:contentDescription="@string/search_icon_cd"
-            app:layout_constraintBottom_toTopOf="@id/search_hint_text_view"
+            app:layout_constraintBottom_toTopOf="@id/empty_state_text_view"
             app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@id/search_input_layout"
+            app:layout_constraintTop_toBottomOf="@id/title_text_view"
             app:layout_constraintVertical_bias="0.3"
             app:layout_constraintVertical_chainStyle="packed"
             app:srcCompat="@drawable/ic_search_character" />
 
         <TextView
-            android:id="@+id/search_hint_text_view"
+            android:id="@+id/empty_state_text_view"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -145,12 +122,20 @@
             app:layout_constraintBottom_toBottomOf="@id/guidelineBottom"
             app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
             app:layout_constraintStart_toStartOf="@id/guidelineStart"
-            app:layout_constraintTop_toBottomOf="@id/search_hint_image"
+            app:layout_constraintTop_toBottomOf="@id/empty_state_image"
             app:layout_constraintWidth_max="256dp" />
 
+        <Button
+            android:id="@+id/retry_button"
+            style="@style/Widget.App.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+            app:layout_constraintStart_toStartOf="@id/guidelineStart"
+            app:layout_constraintTop_toBottomOf="@id/empty_state_text_view" />
 
         <include layout="@layout/app_guidelines_ltr" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 

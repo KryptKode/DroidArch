@@ -14,6 +14,8 @@ import org.gradle.plugin.use.PluginDependencySpec
 object Versions {
     const val org_jetbrains_kotlinx_kotlinx_coroutines: String = "1.4.2"
 
+    const val com_github_bumptech_glide: String = "4.11.0"
+
     const val androidx_test_espresso: String = "3.3.0"
 
     const val com_squareup_retrofit2: String = "2.9.0"
@@ -66,6 +68,8 @@ object Versions {
 
     const val leakcanary_android: String = "2.6"
 
+    const val swiperefreshlayout: String = "1.2.0-alpha01"
+
     const val kotlin_test_junit: String = "1.4.21-2"
 
     const val pageindicatorview: String = "1.0.3"
@@ -73,6 +77,8 @@ object Versions {
     const val constraintlayout: String = "2.0.4"
 
     const val circleimageview: String = "3.1.0"
+
+    const val vectordrawable: String = "1.1.0"
 
     const val kotlin_stdlib: String = "1.4.21-2"
 

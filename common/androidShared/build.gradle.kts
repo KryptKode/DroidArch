@@ -15,6 +15,7 @@ dependencies {
     implementation(Libs.constraintlayout)
 
     implementation(Libs.fragment_ktx)
+    implementation(Libs.swiperefreshlayout)
 
     implementation(Libs.lifecycle_common_java8)
 }

@@ -17,14 +17,28 @@ object Libs {
     /**
      * https://github.com/Kotlin/kotlinx.coroutines
      */
-    const val kotlinx_coroutines_core: String = "org.jetbrains.kotlinx:kotlinx-coroutines-core:" +
+    const val kotlinx_coroutines_core: String =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-core:" +
             Versions.org_jetbrains_kotlinx_kotlinx_coroutines
 
     /**
      * https://github.com/Kotlin/kotlinx.coroutines
      */
-    const val kotlinx_coroutines_test: String = "org.jetbrains.kotlinx:kotlinx-coroutines-test:" +
+    const val kotlinx_coroutines_test: String =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-test:" +
             Versions.org_jetbrains_kotlinx_kotlinx_coroutines
+
+    /**
+     * https://github.com/bumptech/glide
+     */
+    const val com_github_bumptech_glide_compiler: String =
+            "com.github.bumptech.glide:compiler:" + Versions.com_github_bumptech_glide
+
+    /**
+     * https://github.com/bumptech/glide
+     */
+    const val glide: String = "com.github.bumptech.glide:glide:" +
+            Versions.com_github_bumptech_glide
 
     /**
      * https://developer.android.com/testing
@@ -82,8 +96,14 @@ object Libs {
     /**
      * https://developer.android.com/topic/libraries/architecture/index.html
      */
-    const val navigation_fragment_ktx: String = "androidx.navigation:navigation-fragment-ktx:" +
-            Versions.androidx_navigation
+    const val navigation_fragment_ktx: String =
+            "androidx.navigation:navigation-fragment-ktx:" + Versions.androidx_navigation
+
+    /**
+     * https://developer.android.com/topic/libraries/architecture/index.html
+     */
+    const val navigation_safe_args_gradle_plugin: String =
+            "androidx.navigation:navigation-safe-args-gradle-plugin:" + Versions.androidx_navigation
 
     /**
      * https://developer.android.com/topic/libraries/architecture/index.html
@@ -118,8 +138,8 @@ object Libs {
     /**
      * https://developer.android.com/jetpack/androidx
      */
-    const val lifecycle_viewmodel_ktx: String = "androidx.lifecycle:lifecycle-viewmodel-ktx:" +
-            Versions.androidx_lifecycle
+    const val lifecycle_viewmodel_ktx: String =
+            "androidx.lifecycle:lifecycle-viewmodel-ktx:" + Versions.androidx_lifecycle
 
     /**
      * https://github.com/square/moshi/
@@ -136,7 +156,8 @@ object Libs {
     /**
      * https://developer.android.com/topic/libraries/architecture/index.html
      */
-    const val paging_common: String = "androidx.paging:paging-common:" + Versions.androidx_paging
+    const val paging_common: String = "androidx.paging:paging-common:" +
+            Versions.androidx_paging
 
     /**
      * http://developer.android.com/tools/extras/support-library.html
@@ -174,7 +195,8 @@ object Libs {
     /**
      * https://developer.android.com/topic/libraries/architecture/index.html
      */
-    const val work_runtime_ktx: String = "androidx.work:work-runtime-ktx:" + Versions.androidx_work
+    const val work_runtime_ktx: String = "androidx.work:work-runtime-ktx:" +
+            Versions.androidx_work
 
     /**
      * https://developer.android.com/topic/libraries/architecture/index.html
@@ -206,12 +228,14 @@ object Libs {
     /**
      * https://developer.android.com/testing
      */
-    const val androidx_test_runner: String = "androidx.test:runner:" + Versions.androidx_test_runner
+    const val androidx_test_runner: String = "androidx.test:runner:" +
+            Versions.androidx_test_runner
 
     /**
      * https://developer.android.com/testing
      */
-    const val androidx_test_rules: String = "androidx.test:rules:" + Versions.androidx_test_rules
+    const val androidx_test_rules: String = "androidx.test:rules:" +
+            Versions.androidx_test_rules
 
     /**
      * http://junit.org
@@ -243,8 +267,8 @@ object Libs {
             "com.github.florent37:inline-activity-result-kotlin:" +
             Versions.inline_activity_result_kotlin
 
-    const val hilt_android_gradle_plugin: String = "com.google.dagger:hilt-android-gradle-plugin:" +
-            Versions.hilt_android_gradle_plugin
+    const val hilt_android_gradle_plugin: String =
+            "com.google.dagger:hilt-android-gradle-plugin:" + Versions.hilt_android_gradle_plugin
 
     /**
      * https://kotlinlang.org/
@@ -255,8 +279,8 @@ object Libs {
     /**
      * https://kotlinlang.org/
      */
-    const val kotlin_parcelize_runtime: String = "org.jetbrains.kotlin:kotlin-parcelize-runtime:" +
-            Versions.kotlin_parcelize_runtime
+    const val kotlin_parcelize_runtime: String =
+            "org.jetbrains.kotlin:kotlin-parcelize-runtime:" + Versions.kotlin_parcelize_runtime
 
     const val hilt_android_compiler: String = "com.google.dagger:hilt-android-compiler:" +
             Versions.hilt_android_compiler
@@ -272,6 +296,12 @@ object Libs {
      */
     const val leakcanary_android: String = "com.squareup.leakcanary:leakcanary-android:" +
             Versions.leakcanary_android
+
+    /**
+     * https://developer.android.com/jetpack/androidx
+     */
+    const val swiperefreshlayout: String =
+            "androidx.swiperefreshlayout:swiperefreshlayout:" + Versions.swiperefreshlayout
 
     /**
      * https://kotlinlang.org/
@@ -294,24 +324,35 @@ object Libs {
     /**
      * https://github.com/hdodenhof/CircleImageView
      */
-    const val circleimageview: String = "de.hdodenhof:circleimageview:" + Versions.circleimageview
-
-    /**
-     * https://kotlinlang.org/
-     */
-    const val kotlin_stdlib: String = "org.jetbrains.kotlin:kotlin-stdlib:" + Versions.kotlin_stdlib
-
-    /**
-     * https://developer.android.com/topic/libraries/architecture/index.html
-     */
-    const val core_testing: String = "android.arch.core:core-testing:" + Versions.core_testing
+    const val circleimageview: String = "de.hdodenhof:circleimageview:" +
+            Versions.circleimageview
 
     /**
      * https://developer.android.com/jetpack/androidx
      */
-    const val fragment_ktx: String = "androidx.fragment:fragment-ktx:" + Versions.fragment_ktx
+    const val vectordrawable: String = "androidx.vectordrawable:vectordrawable:" +
+            Versions.vectordrawable
 
-    const val hilt_android: String = "com.google.dagger:hilt-android:" + Versions.hilt_android
+    /**
+     * https://kotlinlang.org/
+     */
+    const val kotlin_stdlib: String = "org.jetbrains.kotlin:kotlin-stdlib:" +
+            Versions.kotlin_stdlib
+
+    /**
+     * https://developer.android.com/topic/libraries/architecture/index.html
+     */
+    const val core_testing: String = "android.arch.core:core-testing:" +
+            Versions.core_testing
+
+    /**
+     * https://developer.android.com/jetpack/androidx
+     */
+    const val fragment_ktx: String = "androidx.fragment:fragment-ktx:" +
+            Versions.fragment_ktx
+
+    const val hilt_android: String = "com.google.dagger:hilt-android:" +
+            Versions.hilt_android
 
     /**
      * http://code.google.com/p/atinject/
@@ -321,14 +362,17 @@ object Libs {
     /**
      * https://developer.android.com/jetpack/androidx
      */
-    const val recyclerview: String = "androidx.recyclerview:recyclerview:" + Versions.recyclerview
+    const val recyclerview: String = "androidx.recyclerview:recyclerview:" +
+            Versions.recyclerview
 
     /**
      * https://developer.android.com/studio
      */
-    const val lint_gradle: String = "com.android.tools.lint:lint-gradle:" + Versions.lint_gradle
+    const val lint_gradle: String = "com.android.tools.lint:lint-gradle:" +
+            Versions.lint_gradle
 
-    const val viewbinding: String = "androidx.databinding:viewbinding:" + Versions.viewbinding
+    const val viewbinding: String = "androidx.databinding:viewbinding:" +
+            Versions.viewbinding
 
     /**
      * https://developer.android.com/jetpack/androidx

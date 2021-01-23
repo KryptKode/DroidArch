@@ -29,6 +29,8 @@ android {
 
 dependencies {
 
+    implementation(project(BuildModules.Common.androidShared))
+
     implementation(Libs.kotlinx_coroutines_android)
     implementation(Libs.work_runtime_ktx)
     androidTestImplementation(Libs.work_testing)
@@ -46,6 +48,11 @@ dependencies {
     kapt(Libs.room_compiler)
 
     implementation(Libs.paging_runtime_ktx)
+
+    implementation(Libs.glide)
+    kapt(Libs.com_github_bumptech_glide_compiler)
+
+    implementation(Libs.swiperefreshlayout)
 
     implementation(Libs.okhttp)
     implementation(Libs.logging_interceptor)

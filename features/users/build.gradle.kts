@@ -7,6 +7,7 @@ plugins {
 dependencies {
     implementation(project(BuildModules.Common.androidShared))
     implementation(project(BuildModules.core))
+    implementation(project(BuildModules.navigation))
     implementation(project(BuildModules.Libs.baseMvi))
 
     implementation(Libs.kotlinx_coroutines_android)
@@ -16,6 +17,8 @@ dependencies {
 
     implementation(Libs.core_ktx)
     implementation(Libs.appcompat)
+    implementation(Libs.vectordrawable)
+    implementation(Libs.swiperefreshlayout)
 
     implementation(Libs.material)
     implementation(Libs.constraintlayout)
@@ -28,6 +31,11 @@ dependencies {
 
     implementation(Libs.fragment_ktx)
     implementation(Libs.timber)
+
+    implementation(Libs.paging_runtime_ktx)
+
+    implementation(Libs.glide)
+    kapt(Libs.com_github_bumptech_glide_compiler)
 
     implementation(Libs.lifecycle_extensions)
     implementation(Libs.lifecycle_livedata_ktx)
