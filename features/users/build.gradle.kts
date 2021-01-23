@@ -6,6 +6,7 @@ plugins {
 
 dependencies {
     implementation(project(BuildModules.Common.androidShared))
+    implementation(project(BuildModules.core))
     implementation(project(BuildModules.Libs.baseMvi))
 
     implementation(Libs.kotlinx_coroutines_android)
@@ -22,6 +23,8 @@ dependencies {
     implementation(Libs.circleimageview)
     implementation(Libs.pageindicatorview)
     implementation(Libs.viewpager2)
+
+    implementation(Libs.paging_runtime_ktx)
 
     implementation(Libs.fragment_ktx)
     implementation(Libs.timber)

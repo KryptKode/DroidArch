@@ -29,11 +29,14 @@ dependencies {
     implementation(Libs.hilt_work)
     kapt(Libs.hilt_compiler)
 
+    implementation(Libs.timber)
     implementation(Libs.moshi_kotlin)
 
     implementation(Libs.room_ktx)
     implementation(Libs.room_runtime)
     kapt(Libs.room_compiler)
+
+    implementation(Libs.paging_runtime_ktx)
 
     implementation(Libs.okhttp)
     implementation(Libs.logging_interceptor)

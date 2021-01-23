@@ -2,7 +2,7 @@ package com.kryptkode.core.di
 
 import android.content.Context
 import com.kryptkode.core.cache.AppDatabase
-import com.kryptkode.core.cache.character.CharacterDao
+import com.kryptkode.core.cache.user.UserDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,8 +24,8 @@ interface CacheModule {
 
         @Provides
         @Singleton
-        fun provideCharacterDao(appDatabase: AppDatabase): CharacterDao {
-            return appDatabase.charactersDao()
+        fun provideCharacterDao(appDatabase: AppDatabase): UserDao {
+            return appDatabase.userDao()
         }
     }
 }

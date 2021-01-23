@@ -38,23 +38,25 @@ object Versions {
 
     const val de_fayard_buildsrcversions_gradle_plugin: String = "0.7.0"
 
-    const val kotlin_scripting_compiler_embeddable: String = "1.4.21"
+    const val kotlin_scripting_compiler_embeddable: String = "1.4.21" // available: "1.4.21-2"
 
-    const val kotlin_annotation_processing_gradle: String = "1.4.21"
+    const val kotlin_annotation_processing_gradle: String = "1.4.21" // available: "1.4.21-2"
 
     const val inline_activity_result_kotlin: String = "1.0.4"
 
     const val hilt_android_gradle_plugin: String = "2.28.3-alpha"
 
-    const val kotlin_parcelize_compiler: String = "1.4.21"
+    const val kotlin_parcelize_compiler: String = "1.4.21" // available: "1.4.21-2"
 
-    const val kotlin_parcelize_runtime: String = "1.4.21"
+    const val kotlin_parcelize_runtime: String = "1.4.21" // available: "1.4.21-2"
 
     const val hilt_android_compiler: String = "2.30.1-alpha"
 
-    const val kotlin_gradle_plugin: String = "1.4.21"
+    const val kotlin_gradle_plugin: String = "1.4.21" // available: "1.4.21-2"
 
     const val leakcanary_android: String = "2.6"
+
+    const val paging_runtime_ktx: String = "3.0.0-alpha12"
 
     const val pageindicatorview: String = "1.0.3"
 
@@ -76,9 +78,9 @@ object Versions {
 
     const val recyclerview: String = "1.1.0"
 
-    const val lint_gradle: String = "27.1.1"
+    const val lint_gradle: String = "27.1.1" // available: "27.1.2"
 
-    const val viewbinding: String = "4.1.1"
+    const val viewbinding: String = "4.1.1" // available: "4.1.2"
 
     const val viewpager2: String = "1.0.0"
 
@@ -88,22 +90,22 @@ object Versions {
 
     const val material: String = "1.2.1"
 
-    const val ktlint: String = "0.38.1"
+    const val ktlint: String = "0.38.1" // available: "0.40.0"
 
     const val timber: String = "4.7.1"
 
-    const val aapt2: String = "4.1.1-6503028"
+    const val aapt2: String = "4.1.1-6503028" // available: "4.1.2-6503028"
 
-    const val mockk: String = "1.10.4"
+    const val mockk: String = "1.10.4" // available: "1.10.5"
 
-    const val truth: String = "1.1"
+    const val truth: String = "1.1" // available: "1.1.1"
 
     /**
      * Current version: "6.5"
      * See issue 19: How to update Gradle itself?
      * https://github.com/jmfayard/buildSrcVersions/issues/19
      */
-    const val gradleLatestVersion: String = "6.8"
+    const val gradleLatestVersion: String = "6.8.1"
 }
 
 /**

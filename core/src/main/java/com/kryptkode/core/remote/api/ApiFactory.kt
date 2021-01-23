@@ -14,22 +14,22 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-object SwahPeeServiceApiFactory {
+object ApiFactory {
 
-    fun makeSwahPeeService(moshi: Moshi, isDebug: Boolean): SwahPeeServiceApi {
-        val okHttpClient = makeUnsafeOkHttpClient(
+    fun makeUsersService(moshi: Moshi, isDebug: Boolean): UsersServiceApi {
+        val okHttpClient = makeOkHttpClient(
             makeLoggingInterceptor((isDebug))
         )
-        return makeSwahPeeService(okHttpClient, moshi)
+        return makeUsersService(okHttpClient, moshi)
     }
 
-    private fun makeSwahPeeService(client: OkHttpClient, moshi: Moshi): SwahPeeServiceApi {
+    private fun makeUsersService(client: OkHttpClient, moshi: Moshi): UsersServiceApi {
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://swapi.dev/api/")
+            .baseUrl("https://dummyapi.io/data/api/")
             .client(client)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
-        return retrofit.create(SwahPeeServiceApi::class.java)
+        return retrofit.create(UsersServiceApi::class.java)
     }
 
     private fun makeOkHttpClient(interceptor: HttpLoggingInterceptor): OkHttpClient {

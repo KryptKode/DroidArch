@@ -5,4 +5,4 @@ include ':navigation'
 include ':app'
 include ':features:users'
 include ':libs:basemvi'
-rootProject.name = "AndroidMultiModuleTemplate"
+rootProject.name = "DroidArch"

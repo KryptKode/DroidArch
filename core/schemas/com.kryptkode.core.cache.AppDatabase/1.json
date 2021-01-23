@@ -2,58 +2,114 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "e46ab71a67e09c02122a2bbcbbc87776",
+    "identityHash": "520d921cf89bb1f66190741cc1219d0f",
     "entities": [
       {
-        "tableName": "characters",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`url` TEXT NOT NULL, `name` TEXT NOT NULL, `birth_year` TEXT NOT NULL, `height` TEXT NOT NULL, `home_world` TEXT NOT NULL, `films` TEXT NOT NULL, `species` TEXT NOT NULL, PRIMARY KEY(`url`))",
+        "tableName": "users",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` TEXT NOT NULL, `lastName` TEXT NOT NULL, `firstName` TEXT NOT NULL, `email` TEXT NOT NULL, `title` TEXT NOT NULL, `picture` TEXT NOT NULL, `gender` TEXT NOT NULL, `phone` TEXT NOT NULL, `location` TEXT NOT NULL, `registerDate` TEXT, `dateOfBirth` TEXT, PRIMARY KEY(`id`))",
         "fields": [
           {
-            "fieldPath": "url",
-            "columnName": "url",
+            "fieldPath": "id",
+            "columnName": "id",
             "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "name",
-            "columnName": "name",
+            "fieldPath": "lastName",
+            "columnName": "lastName",
             "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "birthYear",
-            "columnName": "birth_year",
+            "fieldPath": "firstName",
+            "columnName": "firstName",
             "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "height",
-            "columnName": "height",
+            "fieldPath": "email",
+            "columnName": "email",
             "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "homeWorld",
-            "columnName": "home_world",
+            "fieldPath": "title",
+            "columnName": "title",
             "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "films",
-            "columnName": "films",
+            "fieldPath": "picture",
+            "columnName": "picture",
             "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "species",
-            "columnName": "species",
+            "fieldPath": "gender",
+            "columnName": "gender",
             "affinity": "TEXT",
             "notNull": true
+          },
+          {
+            "fieldPath": "phone",
+            "columnName": "phone",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "location",
+            "columnName": "location",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "registerDate",
+            "columnName": "registerDate",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "dateOfBirth",
+            "columnName": "dateOfBirth",
+            "affinity": "TEXT",
+            "notNull": false
           }
         ],
         "primaryKey": {
           "columnNames": [
-            "url"
+            "id"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "user_remote_keys",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`userId` TEXT NOT NULL, `prevKey` INTEGER, `nextKey` INTEGER, PRIMARY KEY(`userId`))",
+        "fields": [
+          {
+            "fieldPath": "userId",
+            "columnName": "userId",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "prevKey",
+            "columnName": "prevKey",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "nextKey",
+            "columnName": "nextKey",
+            "affinity": "INTEGER",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "userId"
           ],
           "autoGenerate": false
         },
@@ -64,7 +120,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'e46ab71a67e09c02122a2bbcbbc87776')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '520d921cf89bb1f66190741cc1219d0f')"
     ]
   }
 }
