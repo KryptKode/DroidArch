@@ -4,6 +4,7 @@ import android.view.View
 import androidx.paging.LoadState
 import com.kryptkode.basemvi.UiView
 import com.kryptkode.commonandroid.extension.beVisibleIf
+import com.kryptkode.core.imageloader.ImageLoader
 import com.kryptkode.feature.users.databinding.LayoutUsersBinding
 import com.kryptkode.users.ui.list.UserListState
 import com.kryptkode.users.ui.list.UserListViewEvent
@@ -12,10 +13,11 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.merge
 
 class UserListView(
-    private val binding: LayoutUsersBinding
+    private val binding: LayoutUsersBinding,
+    imageLoader: ImageLoader,
 ) : UiView() {
 
-    private val adapter = UserListAdapter()
+    private val adapter = UserListAdapter(imageLoader)
 
     init {
         binding.retryButton.setOnClickListener { adapter.retry() }

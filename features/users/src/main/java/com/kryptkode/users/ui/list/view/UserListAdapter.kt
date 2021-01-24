@@ -7,6 +7,7 @@ import androidx.paging.LoadState
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.kryptkode.core.imageloader.ImageLoader
 import com.kryptkode.feature.users.R
 import com.kryptkode.feature.users.databinding.ItemUserBinding
 import com.kryptkode.users.model.User
@@ -14,7 +15,7 @@ import java.util.Locale
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.callbackFlow
 
-class UserListAdapter :
+class UserListAdapter(private val imageLoader: ImageLoader) :
     PagingDataAdapter<User, UserListAdapter.UserListViewHolder>(UI_MODEL_DIFF_UTIL) {
 
     private var listener: Listener? = null
@@ -74,6 +75,8 @@ class UserListAdapter :
                 )
 
                 binding.emailTextView.text = user.email
+
+                imageLoader.load(user.picture, binding.image)
 
                 binding.root.setOnClickListener {
                     listener?.onItemClick(user)

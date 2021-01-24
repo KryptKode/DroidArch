@@ -7,6 +7,7 @@ import androidx.fragment.app.viewModels
 import com.kryptkode.commonandroid.ToastHelper
 import com.kryptkode.commonandroid.flowbinding.lifecycleAwareLaunch
 import com.kryptkode.commonandroid.viewbinding.viewBinding
+import com.kryptkode.core.imageloader.ImageLoader
 import com.kryptkode.feature.users.R
 import com.kryptkode.feature.users.databinding.LayoutUsersBinding
 import com.kryptkode.users.navigator.UsersNavigator
@@ -24,13 +25,16 @@ class UserListFragment : Fragment(R.layout.layout_users) {
     @Inject
     lateinit var toastHelper: ToastHelper
 
+    @Inject
+    lateinit var imageLoader: ImageLoader
+
     private val viewModel: UserListViewModel by viewModels()
 
     private val binding by viewBinding(LayoutUsersBinding::bind)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val userListView = UserListView(binding)
+        val userListView = UserListView(binding, imageLoader)
 
         viewModel.viewState.onEach {
             userListView.render(it)
