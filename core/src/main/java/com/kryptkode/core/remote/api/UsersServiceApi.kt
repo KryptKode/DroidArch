@@ -16,4 +16,8 @@ interface UsersServiceApi {
 
     @GET("user/{userId}")
     suspend fun getUserDetails(@Path("userId") userId: String): UserDetailResponse
+
+    companion object {
+        const val NAME = "real"
+    }
 }

@@ -11,10 +11,12 @@ import com.kryptkode.core.remote.mapper.UserResponseDbMapper
 import com.kryptkode.core.remote.mediator.UserRemoteMediator
 import com.kryptkode.core.repo.UserRepository.Companion.PAGE_SIZE
 import javax.inject.Inject
+import javax.inject.Named
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.onEmpty
 
 class UserRepositoryImpl @Inject constructor(
+    @Named(UsersServiceApi.NAME)
     private val usersServiceApi: UsersServiceApi,
     private val remoteMediator: UserRemoteMediator,
     private val remoteDbMapper: UserResponseDbMapper,
