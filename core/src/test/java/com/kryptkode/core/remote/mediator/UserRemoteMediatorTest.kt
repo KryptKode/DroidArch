@@ -11,6 +11,7 @@ import okhttp3.mockwebserver.MockWebServer
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
+import org.junit.Test
 import org.junit.runner.RunWith
 import org.robolectric.RobolectricTestRunner
 
@@ -53,6 +54,10 @@ class UserRemoteMediatorTest {
 //
 //        sut.getRemoteKeyForFirstItem(pageState)
 //    }
+
+    @Test
+    fun test() {
+    }
 
     @After
     fun tearDown() {
