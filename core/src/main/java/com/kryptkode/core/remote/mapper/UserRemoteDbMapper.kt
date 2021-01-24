@@ -2,8 +2,9 @@ package com.kryptkode.core.remote.mapper
 
 import com.kryptkode.core.cache.user.DbUser
 import com.kryptkode.core.remote.entities.user.UserRemote
+import javax.inject.Inject
 
-class UserRemoteDbMapper : RemoteMapper<UserRemote, DbUser> {
+class UserRemoteDbMapper @Inject constructor() : RemoteMapper<UserRemote, DbUser> {
     override fun mapToEntity(remote: UserRemote): DbUser {
         return DbUser(
             id = remote.id,

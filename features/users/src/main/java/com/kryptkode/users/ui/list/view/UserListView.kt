@@ -5,12 +5,15 @@ import androidx.paging.LoadState
 import com.kryptkode.basemvi.UiView
 import com.kryptkode.commonandroid.extension.beVisibleIf
 import com.kryptkode.feature.users.databinding.LayoutUsersBinding
+import com.kryptkode.users.ui.list.UserListState
+import com.kryptkode.users.ui.list.UserListViewEvent
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.merge
 
 class UserListView(
     private val binding: LayoutUsersBinding
-) : UiView<UserState, UserListViewIntent>() {
+) : UiView() {
 
     private val adapter = UserListAdapter()
 
@@ -30,22 +33,18 @@ class UserListView(
             binding.swipeRefresh.isRefreshing = (loadState.refresh is LoadState.Loading)
             // Show the retry state if initial load or refresh fails.
             binding.retryButton.beVisibleIf(loadState.refresh is LoadState.Error)
-
-            // Toast on any error, regardless of whether it came from RemoteMediator or PagingSource
-            val errorState = loadState.source.append as? LoadState.Error
-                ?: loadState.source.prepend as? LoadState.Error
-                ?: loadState.append as? LoadState.Error
-                ?: loadState.prepend as? LoadState.Error
-            errorState?.let { error ->
-            }
         }
     }
 
-    override val intents: Flow<UserListViewIntent>
-        get() = adapter.onClickItemFlow
-            .map { UserListViewIntent.ClickUser(it) }
+    val events: Flow<UserListViewEvent>
+        get() = merge(
+            adapter.onClickItemFlow
+                .map { UserListViewEvent.ClickUser(it) },
+            adapter.loadStateErrorFlow.map { UserListViewEvent.ShowError(it) }
+        )
 
-    override fun render(state: UserState) {
+    suspend fun render(state: UserListState) {
+        adapter.submitData(state.items)
     }
 
     override val rootView: View

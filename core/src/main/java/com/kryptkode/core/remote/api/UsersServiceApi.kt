@@ -8,7 +8,7 @@ import retrofit2.http.Query
 
 interface UsersServiceApi {
 
-    @GET("user/")
+    @GET("user")
     suspend fun getUsers(
         @Query("page") page: Int,
         @Query("limit") limit: Int,

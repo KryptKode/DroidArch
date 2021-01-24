@@ -50,6 +50,7 @@ dependencies {
 
     implementation(Libs.room_ktx)
     implementation(Libs.room_runtime)
+    implementation(Libs.paging_runtime_ktx)
 
     implementation(Libs.constraintlayout)
     implementation(Libs.material)

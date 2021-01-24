@@ -4,7 +4,7 @@ import android.content.Context
 import android.view.View
 import androidx.annotation.StringRes
 
-abstract class UiView<in S : MviViewState, I : MviIntent> : MviView<I, S> {
+abstract class UiView {
 
     abstract val rootView: View
 

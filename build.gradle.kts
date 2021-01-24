@@ -35,6 +35,7 @@ allprojects {
         kotlinOptions.freeCompilerArgs +=
             "-Xuse-experimental=" +
             "kotlin.Experimental," +
+            "-Xopt-in=kotlin.RequiresOptIn," +
             "kotlinx.coroutines.ExperimentalCoroutinesApi," +
             "kotlinx.coroutines.InternalCoroutinesApi," +
             "kotlinx.coroutines.ObsoleteCoroutinesApi," +

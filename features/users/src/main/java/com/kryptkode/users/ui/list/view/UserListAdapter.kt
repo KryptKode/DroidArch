@@ -2,6 +2,8 @@ package com.kryptkode.users.ui.list.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.paging.CombinedLoadStates
+import androidx.paging.LoadState
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -28,6 +30,23 @@ class UserListAdapter :
             }
         }
         awaitClose { listener = null }
+    }
+
+    val loadStateErrorFlow = callbackFlow {
+        val loadStateListener = { loadState: CombinedLoadStates ->
+            // Toast on any error, regardless of whether it came from RemoteMediator or PagingSource
+            val errorState = loadState.source.append as? LoadState.Error
+                ?: loadState.source.prepend as? LoadState.Error
+                ?: loadState.append as? LoadState.Error
+                ?: loadState.prepend as? LoadState.Error
+            errorState?.let {
+                offer(it.error)
+            }
+            Unit
+        }
+
+        addLoadStateListener(loadStateListener)
+        awaitClose { removeLoadStateListener(loadStateListener) }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserListViewHolder {
