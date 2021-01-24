@@ -1,3 +1,6 @@
+import extensions.buildConfigStringField
+import extensions.getLocalProperty
+
 plugins {
     androidLibrary
     kotlinKapt
@@ -13,6 +16,11 @@ android {
         }
 
         testInstrumentationRunner("androidx.test.runner.AndroidJUnitRunner")
+
+        buildTypes.forEach {
+            it.buildConfigStringField("BASE_URL", "https://dummyapi.io/data/api/")
+            it.buildConfigStringField("DUMMY_APP_ID", getLocalProperty("dummy.api.app.id"))
+        }
     }
 
     sourceSets {

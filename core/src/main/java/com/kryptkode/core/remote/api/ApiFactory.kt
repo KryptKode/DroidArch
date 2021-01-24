@@ -1,6 +1,7 @@
 package com.kryptkode.core.remote.api
 
 import android.annotation.SuppressLint
+import com.kryptkode.core.BuildConfig
 import com.squareup.moshi.Moshi
 import java.security.SecureRandom
 import java.security.cert.X509Certificate
@@ -25,7 +26,7 @@ object ApiFactory {
 
     private fun makeUsersService(client: OkHttpClient, moshi: Moshi): UsersServiceApi {
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://dummyapi.io/data/api/")
+            .baseUrl(BuildConfig.BASE_URL)
             .client(client)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
@@ -34,8 +35,9 @@ object ApiFactory {
 
     private fun makeOkHttpClient(interceptor: HttpLoggingInterceptor): OkHttpClient {
         return OkHttpClient.Builder()
-            .addInterceptor(interceptor)
             .addInterceptor(HttpsEnforcerInterceptor())
+            .addInterceptor(AppIdHeaderInterceptor())
+            .addInterceptor(interceptor)
             .connectTimeout(MAX_TIMEOUT_SECS, TimeUnit.SECONDS)
             .readTimeout(MAX_TIMEOUT_SECS, TimeUnit.SECONDS)
             .build()
@@ -70,8 +72,9 @@ object ApiFactory {
         builder.hostnameVerifier { _, _ ->
             true
         }
-            .addInterceptor(interceptor)
             .addInterceptor(HttpsEnforcerInterceptor())
+            .addInterceptor(AppIdHeaderInterceptor())
+            .addInterceptor(interceptor)
             .connectTimeout(MAX_TIMEOUT_SECS, TimeUnit.SECONDS)
             .readTimeout(MAX_TIMEOUT_SECS, TimeUnit.SECONDS)
         return builder.build()
@@ -87,5 +90,5 @@ object ApiFactory {
         return logging
     }
 
-    private const val MAX_TIMEOUT_SECS = 90L
+    private const val MAX_TIMEOUT_SECS = 60L
 }
