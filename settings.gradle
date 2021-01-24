@@ -3,4 +3,6 @@ include ':common:testShared'
 include ':core'
 include ':navigation'
 include ':app'
-rootProject.name = "AndroidMultiModuleTemplate"
+include ':features:users'
+include ':libs:basemvi'
+rootProject.name = "DroidArch"

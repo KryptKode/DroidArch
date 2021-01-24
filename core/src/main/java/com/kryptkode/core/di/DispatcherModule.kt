@@ -14,5 +14,5 @@ interface DispatcherModule {
 
     @Binds
     @Singleton
-    fun provideDispatcher(swahPeeDispatchers: AppDispatchersImpl): AppDispatchers
+    fun provideDispatcher(dispatchers: AppDispatchersImpl): AppDispatchers
 }

@@ -1,8 +1,8 @@
 package com.kryptkode.core.di
 
 import com.kryptkode.core.BuildConfig
-import com.kryptkode.core.remote.api.SwahPeeServiceApi
-import com.kryptkode.core.remote.api.SwahPeeServiceApiFactory
+import com.kryptkode.core.remote.api.ApiFactory
+import com.kryptkode.core.remote.api.UsersServiceApi
 import com.squareup.moshi.Moshi
 import dagger.Module
 import dagger.Provides
@@ -22,8 +22,8 @@ interface RemoteModule {
         }
 
         @Provides
-        fun provideSwahPeeService(moshi: Moshi): SwahPeeServiceApi {
-            return SwahPeeServiceApiFactory.makeSwahPeeService(moshi, BuildConfig.DEBUG)
+        fun provideSwahPeeService(moshi: Moshi): UsersServiceApi {
+            return ApiFactory.makeUsersService(moshi, BuildConfig.DEBUG)
         }
     }
 }

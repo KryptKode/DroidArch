@@ -5,26 +5,31 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.kryptkode.core.cache.character.CharacterDao
-import com.kryptkode.core.cache.character.DbCharacter
 import com.kryptkode.core.cache.converter.DateConverter
+import com.kryptkode.core.cache.converter.LocationConverter
 import com.kryptkode.core.cache.converter.StringListConverter
+import com.kryptkode.core.cache.keys.UserRemoteKeys
+import com.kryptkode.core.cache.keys.UserRemoteKeysDao
+import com.kryptkode.core.cache.user.DbUser
+import com.kryptkode.core.cache.user.UserDao
 
 /**
  * Database schema that holds the list of repos.
  */
 @Database(
-    entities = [DbCharacter::class],
+    entities = [DbUser::class, UserRemoteKeys::class],
     version = 1,
     exportSchema = true
 )
 @TypeConverters(
     StringListConverter::class,
-    DateConverter::class
+    DateConverter::class,
+    LocationConverter::class,
 )
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun charactersDao(): CharacterDao
+    abstract fun userDao(): UserDao
+    abstract fun userRemoteKeysDao(): UserRemoteKeysDao
 
     companion object {
 
@@ -41,7 +46,7 @@ abstract class AppDatabase : RoomDatabase() {
             Room.databaseBuilder(
                 context.applicationContext,
                 AppDatabase::class.java,
-                "swahpee.db"
+                "droidArch.db"
             )
                 .build()
     }
