@@ -50,7 +50,7 @@ object Versions {
 
     const val de_fayard_buildsrcversions_gradle_plugin: String = "0.7.0"
 
-    const val kotlin_scripting_compiler_embeddable: String = "1.4.21" // available: "1.4.21-2"
+    const val kotlin_scripting_compiler_embeddable: String = "1.4.21" // available:"1.4.21-2"
 
     const val kotlin_annotation_processing_gradle: String = "1.4.21" // available: "1.4.21-2"
 
@@ -94,6 +94,8 @@ object Versions {
 
     const val lint_gradle: String = "27.1.1" // available: "27.1.2"
 
+    const val robolectric: String = "4.4" // available: "4.5"
+
     const val viewbinding: String = "4.1.1" // available: "4.1.2"
 
     const val viewpager2: String = "1.0.0"
@@ -110,7 +112,7 @@ object Versions {
 
     const val aapt2: String = "4.1.1-6503028" // available: "4.1.2-6503028"
 
-    const val truth: String = "1.1" // available: "1.1.1"
+    const val truth: String = "1.1" // available: "1.1.2"
 
     /**
      * Current version: "6.5"

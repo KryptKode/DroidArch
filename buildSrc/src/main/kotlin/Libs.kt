@@ -371,6 +371,11 @@ object Libs {
     const val lint_gradle: String = "com.android.tools.lint:lint-gradle:" +
             Versions.lint_gradle
 
+    /**
+     * http://robolectric.org
+     */
+    const val robolectric: String = "org.robolectric:robolectric:" + Versions.robolectric
+
     const val viewbinding: String = "androidx.databinding:viewbinding:" +
             Versions.viewbinding
 

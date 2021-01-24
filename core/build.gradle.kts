@@ -87,4 +87,7 @@ dependencies {
     testImplementation(project(BuildModules.Common.testShared))
     testImplementation(Libs.mockwebserver)
     testImplementation(Libs.paging_common)
+    testImplementation(Libs.robolectric)
+    testImplementation(Libs.androidx_test_rules)
+    testImplementation("androidx.test:core:1.3.0")
 }
