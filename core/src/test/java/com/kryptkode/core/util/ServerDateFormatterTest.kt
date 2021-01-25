@@ -3,6 +3,7 @@ package com.kryptkode.core.util
 import com.google.common.truth.Truth.assertThat
 import com.kryptkode.core.utils.FakeDataFactory
 import com.kryptkode.core.utils.FakeDataFactory.SAMPLE_DATE
+import java.util.TimeZone
 import org.junit.Before
 import org.junit.Test
 
@@ -12,7 +13,7 @@ class ServerDateFormatterTest {
 
     @Before
     fun setUp() {
-        sut = ServerDateFormatter()
+        sut = ServerDateFormatter(TimeZone.getDefault())
     }
 
     @Test
@@ -20,7 +21,7 @@ class ServerDateFormatterTest {
         val testDate = SAMPLE_DATE
 
         val result = sut.parseServerDate(testDate)
-        assertThat(result?.time).isEqualTo(132354908878)
+        assertThat(result?.time).isEqualTo(132351308878)
     }
 
     @Test

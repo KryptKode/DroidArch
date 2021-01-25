@@ -5,16 +5,14 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 import java.util.TimeZone
-import javax.inject.Inject
 import timber.log.Timber
 
-class ServerDateFormatter @Inject constructor() {
-    private val serverDateFormatter = SimpleDateFormat(PATTERN, Locale.ENGLISH)
-
-    private val serverDateParseFormatter = SimpleDateFormat(PATTERN, Locale.ENGLISH)
-        .apply {
-            timeZone = TimeZone.getTimeZone("UTC")
-        }
+class ServerDateFormatter constructor(
+    private val parserTimeZone: TimeZone = TimeZone.getTimeZone("GMT")
+) {
+    private val serverDateParseFormatter = SimpleDateFormat(PATTERN, Locale.ENGLISH).apply {
+        timeZone = parserTimeZone
+    }
 
     fun parseServerDate(date: String): Date? {
         return try {
@@ -29,7 +27,7 @@ class ServerDateFormatter @Inject constructor() {
         return if (date == null) {
             ""
         } else {
-            serverDateFormatter.format(date)
+            serverDateParseFormatter.format(date)
         }
     }
 
