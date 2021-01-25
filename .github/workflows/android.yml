@@ -111,6 +111,13 @@ jobs:
       - name: Run Unit Tests
         run: ./gradlew testDebugUnitTest
 
+      - name: Upload test reports
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: core-unit-test-report
+          path: core/build/reports/tests/testDebugUnitTest/index.html
+
       - name: Generate Code Coverage
         run: ./gradlew jacocoTestReportDebug
 
