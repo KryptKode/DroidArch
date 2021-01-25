@@ -1,3 +1,5 @@
 package com.kryptkode.users.domain
 
-class GetUserDetailUseCase
+import javax.inject.Inject
+
+class GetUserDetailUseCase @Inject constructor()

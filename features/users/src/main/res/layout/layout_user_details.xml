@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:background="?selectableItemBackground"
         android:padding="8dp"
-        android:text="@string/title_character_details"
+        android:text="@string/title_user_details"
         android:textAppearance="@style/TextAppearance.App.H2"
         app:drawableStartCompat="@drawable/ic_back"
         app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
@@ -21,7 +21,7 @@
 
 
     <androidx.core.widget.NestedScrollView
-        android:id="@+id/swipe_refresh"
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:fillViewport="true"
@@ -35,8 +35,8 @@
             android:layout_height="match_parent">
 
             <include
-                android:id="@+id/card_info"
-                layout="@layout/include_character_info"
+                android:id="@+id/card_personal_details"
+                layout="@layout/include_details_personal"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
@@ -45,36 +45,25 @@
 
 
             <include
-                android:id="@+id/card_species"
-                layout="@layout/include_species"
+                android:id="@+id/card_address"
+                layout="@layout/include_details_address"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
                 app:layout_constraintStart_toStartOf="@id/guidelineStart"
-                app:layout_constraintTop_toBottomOf="@id/card_info" />
+                app:layout_constraintTop_toBottomOf="@id/card_personal_details" />
 
 
             <include
-                android:id="@+id/card_planet"
-                layout="@layout/include_planet"
+                android:id="@+id/card_contact"
+                layout="@layout/include_details_contact"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
                 app:layout_constraintStart_toStartOf="@id/guidelineStart"
-                app:layout_constraintTop_toBottomOf="@id/card_species" />
-
-
-            <include
-                android:id="@+id/card_films"
-                layout="@layout/include_films"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
-                app:layout_constraintStart_toStartOf="@id/guidelineStart"
-                app:layout_constraintTop_toBottomOf="@id/card_planet" />
+                app:layout_constraintTop_toBottomOf="@id/card_address" />
 
 
             <androidx.constraintlayout.widget.Guideline
