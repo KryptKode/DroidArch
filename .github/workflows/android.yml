@@ -116,7 +116,7 @@ jobs:
         if: failure()
         with:
           name: core-unit-test-report
-          path: core/build/reports/tests/testDebugUnitTest/index.html
+          path: core/build/reports/tests/testDebugUnitTest
 
       - name: Generate Code Coverage
         run: ./gradlew jacocoTestReportDebug
