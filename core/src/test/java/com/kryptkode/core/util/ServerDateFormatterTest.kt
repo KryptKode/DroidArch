@@ -20,7 +20,7 @@ class ServerDateFormatterTest {
         val testDate = SAMPLE_DATE
 
         val result = sut.parseServerDate(testDate)
-        assertThat(result?.time).isEqualTo(132351308878)
+        assertThat(result?.time).isEqualTo(132354908878)
     }
 
     @Test

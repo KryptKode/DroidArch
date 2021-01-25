@@ -4,6 +4,7 @@ import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import java.util.TimeZone
 import javax.inject.Inject
 import timber.log.Timber
 
@@ -11,6 +12,9 @@ class ServerDateFormatter @Inject constructor() {
     private val serverDateFormatter = SimpleDateFormat(PATTERN, Locale.ENGLISH)
 
     private val serverDateParseFormatter = SimpleDateFormat(PATTERN, Locale.ENGLISH)
+        .apply {
+            timeZone = TimeZone.getTimeZone("UTC")
+        }
 
     fun parseServerDate(date: String): Date? {
         return try {

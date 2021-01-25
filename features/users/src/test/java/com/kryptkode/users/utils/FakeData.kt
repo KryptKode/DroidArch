@@ -7,7 +7,6 @@ import com.kryptkode.users.model.UserDetail
 import com.kryptkode.users.model.UserLocation
 import java.util.Calendar
 import java.util.Date
-import java.util.TimeZone
 
 object FakeData {
 
@@ -15,7 +14,6 @@ object FakeData {
     const val SAMPLE_DATE_TIME = "Mar 12, 1974 21:15 PM"
 
     val testDate: Date = Calendar.getInstance().apply {
-        timeZone = TimeZone.getTimeZone("GMT+1")
         set(Calendar.YEAR, 1974)
         set(Calendar.MONTH, 2)
         set(Calendar.DAY_OF_MONTH, 12)

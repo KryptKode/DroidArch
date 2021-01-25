@@ -15,7 +15,7 @@ object FakeDataFactory {
     const val SAMPLE_DATE = "1974-03-12T21:15:08.878Z"
 
     val testDate: Date = Calendar.getInstance().apply {
-        timeZone = TimeZone.getTimeZone("GMT+1")
+        timeZone = TimeZone.getDefault()
         set(Calendar.YEAR, 1974)
         set(Calendar.MONTH, 2)
         set(Calendar.DAY_OF_MONTH, 12)
