@@ -28,10 +28,11 @@ class UserDetailViewModel @ViewModelInject constructor(
                         .mapFromEntity(user)
                 )
             ) { previous, result ->
-                previous.copy(userDetail = result)
+                previous.copy(userDetail = result, loading = false)
             }
             .onEach {
                 stateFlow.emit(it)
-            }.launchIn(viewModelScope)
+            }
+            .launchIn(viewModelScope)
     }
 }

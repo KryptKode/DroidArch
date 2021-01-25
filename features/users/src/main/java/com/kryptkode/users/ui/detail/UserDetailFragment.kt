@@ -11,6 +11,7 @@ import com.kryptkode.feature.users.R
 import com.kryptkode.feature.users.databinding.LayoutUserDetailsBinding
 import com.kryptkode.users.model.User
 import com.kryptkode.users.navigator.UsersNavigator
+import com.kryptkode.users.ui.detail.view.ProgressView
 import com.kryptkode.users.ui.detail.view.UserContactView
 import com.kryptkode.users.ui.detail.view.UserInfoView
 import com.kryptkode.users.ui.detail.view.UserLocationView
@@ -37,24 +38,25 @@ class UserDetailFragment : Fragment(R.layout.layout_user_details) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        if (savedInstanceState == null) {
-            viewModel.getUserDetails(user)
-        }
 
         val userTitleView = UserTitleView(binding.tvTitle)
         val userInfoView = UserInfoView(binding.cardPersonalDetails, imageLoader)
         val userLocation = UserLocationView(binding.cardAddress)
         val userContactView = UserContactView(binding.cardContact)
+        val progressView = ProgressView(binding.progress)
 
         viewModel.viewState.onEach {
             userInfoView.render(it)
             userLocation.render(it)
             userContactView.render(it)
+            progressView.render(it)
         }.lifecycleAwareLaunch(viewLifecycleOwner)
 
         merge(userTitleView.events)
             .onEach(::handleEvent)
             .lifecycleAwareLaunch(viewLifecycleOwner)
+
+        viewModel.getUserDetails(user)
     }
 
     private fun handleEvent(event: UserDetailViewEvent) {

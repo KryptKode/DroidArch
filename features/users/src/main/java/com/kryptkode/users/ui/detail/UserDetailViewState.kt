@@ -4,7 +4,7 @@ import com.kryptkode.users.model.UserDetail
 
 data class UserDetailViewState(
     val userDetail: UserDetail = UserDetail(),
-    val loading: Boolean = false,
+    val loading: Boolean = true,
     val error: Boolean = false,
     val errorMessage: String = ""
 )
