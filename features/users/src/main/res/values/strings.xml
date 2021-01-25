@@ -24,4 +24,7 @@
     <string name="title_user_details">User info</string>
     <string name="title_contact">Contact</string>
     <string name="title_email">Email</string>
+    <string name="user_dob">Born on %1$s</string>
+    <string name="user_address">%1$s, %2$s, %3$s</string>
+    <string name="user_region">%1$s, GMT%2$s timezone</string>
 </resources>

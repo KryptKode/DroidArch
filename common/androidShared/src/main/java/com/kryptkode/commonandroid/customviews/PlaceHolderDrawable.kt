@@ -10,6 +10,7 @@ class PlaceHolderDrawable(context: Context) : CircularProgressDrawable(context) 
     init {
         strokeWidth = 5f
         centerRadius = 30f
+        minimumWidth
         colorFilter = PorterDuffColorFilter(
             ContextCompat.getColor(
                 context,

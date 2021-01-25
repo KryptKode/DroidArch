@@ -15,12 +15,14 @@ class MockApiServer @Inject constructor(
 
     override suspend fun getUserDetails(userId: String): UserDetailResponse {
         delay(DELAY_MILLIS)
-        return moshi.adapter(UserDetailResponse::class.java)
+        var response = moshi.adapter(UserDetailResponse::class.java)
             .fromJson(
                 assetsLoader.getAssetDataAsString(
                     USER_DETAIL_RESPONSE
                 )!!
             )!!
+        response = response.copy(id = userId)
+        return response
     }
 
     override suspend fun getUsers(page: Int, limit: Int): UserResponse {
