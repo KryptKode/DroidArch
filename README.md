@@ -59,7 +59,7 @@ To build this project, you require:
 - Kotlin coroutines with [Flow]()
 - Dependency injection with [Dagger-Hilt](https://dagger.dev/hilt/)
 - View abstracted from Fragment like [componentizationArch](https://github.com/julianomoraes/componentizationArch)
-- API request with [Retrofit](http://square.github.io/retrofit)
+- API request with [Retrofit](http://square.github.io/retrofit) and [Moshi](https://github.com/square/moshi) for JSON serialisation and deserialization
 - Local persistence with [Room](https://developer.android.com/topic/libraries/architecture/room)
 - Paging with [Paging 3.0](https://developer.android.com/topic/libraries/architecture/paging/v3-overview)
 - CI  with [Github actions](https://github.com/features/actions)
@@ -111,6 +111,7 @@ Testing is done with Junit4 testing framework, and with Google Truth for making 
 - [Material Components](https://github.com/material-components/material-components-android/)
 - [Constraint Layout](https://developer.android.com/reference/android/support/constraint/ConstraintLayout)
 - [Retrofit](http://square.github.io/retrofit) for REST api communication
+- [Moshi](https://github.com/square/moshi) for JSON serialisation and deserialization
 - [Mockk](https://github.com/mockk/mockk) for mocking in tests
 - [Dagger-Hilt](https://dagger.dev/hilt/) for dependency injection
 - [Kotlin Flow](https://kotlinlang.org/docs/reference/coroutines/flow.html) for concurrency
