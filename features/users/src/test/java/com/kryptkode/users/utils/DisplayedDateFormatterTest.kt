@@ -36,7 +36,7 @@ class DisplayedDateFormatterTest {
 
     @Test
     fun `formatToDisplayedDate with valid date returns correctly formatted string`() {
-        val testDate = FakeData.testDate
+        val testDate = FakeData.fakeDate
         val result = sut.formatToDisplayedDate(testDate)
 
         Truth.assertThat(result).isEqualTo("Mar 12, 1974")

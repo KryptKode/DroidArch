@@ -13,7 +13,7 @@ object FakeData {
     const val SAMPLE_DATE = "Mar 12, 1974"
     const val SAMPLE_DATE_TIME = "Mar 12, 1974 21:15 PM"
 
-    val testDate: Date = Calendar.getInstance().apply {
+    val fakeDate: Date = Calendar.getInstance().apply {
         set(Calendar.YEAR, 1974)
         set(Calendar.MONTH, 2)
         set(Calendar.DAY_OF_MONTH, 12)
@@ -34,8 +34,8 @@ object FakeData {
             gender = randomString(),
             phone = randomString(),
             location = makeFakeLocation(),
-            registerDate = testDate,
-            dateOfBirth = testDate,
+            registerDate = fakeDate,
+            dateOfBirth = fakeDate,
         )
     }
 
