@@ -17,8 +17,8 @@ class UserDetailMapperTest {
     @Before
     fun setUp() {
         locationMapper = UserLocationMapper()
-        dateFormatter = DisplayedDateFormatter()
-        dateTimeFormatter = DisplayedDateTimeFormatter()
+        dateFormatter = DisplayedDateFormatter(FakeData.defaultTimeZone)
+        dateTimeFormatter = DisplayedDateTimeFormatter(FakeData.defaultTimeZone)
         sut = UserDetailMapper(locationMapper, dateFormatter, dateTimeFormatter)
     }
 
@@ -40,7 +40,7 @@ class UserDetailMapperTest {
         assertThat(dateTimeFormatter.parseDisplayedDate(result.registerDate)!!.time)
             .isEqualTo(132354900000)
         assertThat(dateFormatter.parseDisplayedDate(result.dateOfBirth)!!.time)
-            .isEqualTo(132274800000)
+            .isEqualTo(132278400000)
     }
 
     @Test
