@@ -7,7 +7,6 @@ plugins {
 dependencies {
     implementation(project(BuildModules.Common.androidShared))
     implementation(project(BuildModules.core))
-    implementation(project(BuildModules.navigation))
     implementation(project(BuildModules.Libs.baseMvi))
 
     implementation(Libs.kotlinx_coroutines_android)
