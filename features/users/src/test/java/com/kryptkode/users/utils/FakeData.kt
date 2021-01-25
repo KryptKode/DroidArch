@@ -4,6 +4,7 @@ import com.kryptkode.core.cache.user.DbUser
 import com.kryptkode.core.remote.entities.user.Location
 import com.kryptkode.core.remote.entities.user.UserDetailResponse
 import com.kryptkode.testshared.DataFactory.randomString
+import com.kryptkode.users.model.User
 import com.kryptkode.users.model.UserDetail
 import com.kryptkode.users.model.UserLocation
 import java.util.Calendar
@@ -42,6 +43,17 @@ object FakeData {
             Location(randomString(), randomString(), randomString()),
             SAMPLE_DATE,
             SAMPLE_DATE,
+        )
+    }
+
+    fun makeUser(): User {
+        return User(
+            id = randomString(),
+            lastName = randomString(),
+            firstName = randomString(),
+            email = randomString(),
+            title = randomString(),
+            picture = randomString(),
         )
     }
 
