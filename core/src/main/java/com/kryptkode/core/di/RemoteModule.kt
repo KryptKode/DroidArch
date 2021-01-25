@@ -24,7 +24,6 @@ import javax.inject.Singleton
 interface RemoteModule {
 
     @Binds
-    @Singleton
     fun provideRemoteMediator(userRemoteMediator: UserRemoteMediator): RemoteMediator<Int, DbUser>
 
     companion object {

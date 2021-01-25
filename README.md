@@ -125,6 +125,7 @@ Testing is done with Junit4 testing framework, and with Google Truth for making 
 - [Kotlin Delegates](https://kotlinlang.org/docs/reference/delegated-properties.html)
 - [Ktlint gradle plugin](https://github.com/JLLeitschuh/ktlint-gradle) for code lint checks
 - [Detekt](https://github.com/detekt/detekt) for static code analysis
+- [LeakCanary](https://github.com/square/leakcanary) for detecting memory leaks in development
 
 ### Extras
 
