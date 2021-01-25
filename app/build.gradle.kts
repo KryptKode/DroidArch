@@ -41,7 +41,6 @@ android {
 dependencies {
 
     implementation(project(BuildModules.core))
-    implementation(project(BuildModules.navigation))
     implementation(project(BuildModules.Common.androidShared))
     implementation(project(BuildModules.Libs.baseMvi))
     implementation(project(BuildModules.Features.users))
