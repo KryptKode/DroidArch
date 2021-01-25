@@ -4,6 +4,7 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.ExperimentalPagingApi
+import androidx.paging.cachedIn
 import com.kryptkode.commonandroid.flowbinding.asFlow
 import com.kryptkode.users.domain.GetUsersUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -21,6 +22,7 @@ class UserListViewModel @ViewModelInject constructor(
 
     init {
         getUsersUseCase.getUsers()
+            .cachedIn(viewModelScope)
             .scan(UserListState()) { previous, result ->
                 previous.copy(items = result)
             }

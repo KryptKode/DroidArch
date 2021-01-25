@@ -61,12 +61,10 @@
     </style>
 
     <style name="Widget.App.Button" parent="Widget.MaterialComponents.Button">
-        <item name="android:minHeight">?actionBarSize</item>
         <item name="android:textAppearance">@style/TextAppearance.App.Button</item>
     </style>
 
     <style name="Widget.App.Button.Outlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
-        <item name="android:minHeight">?actionBarSize</item>
         <item name="android:textAppearance">@style/TextAppearance.App.Button</item>
     </style>
 

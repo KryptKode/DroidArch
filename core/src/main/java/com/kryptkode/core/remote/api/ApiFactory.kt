@@ -23,7 +23,6 @@ object ApiFactory {
         )
         return makeUsersService(okHttpClient, moshi)
     }
-
     private fun makeUsersService(client: OkHttpClient, moshi: Moshi): UsersServiceApi {
         val retrofit = Retrofit.Builder()
             .baseUrl(BuildConfig.BASE_URL)

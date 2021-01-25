@@ -23,9 +23,9 @@ jobs:
           java-version: 1.8
 
       - name: Decode API app-id
-          env:
-            DUMMY_API_ID: ${{ secrets.DUMMY_API_ID }}
-          run: echo dummy.api.app.id="DUMMY_API_ID" >> ./local.properties
+        env:
+          DUMMY_API_ID: ${{ secrets.DUMMY_API_ID }}
+        run: echo dummy.api.app.id="DUMMY_API_ID" >> ./local.properties
 
       - uses: actions/cache@v2
         with:
@@ -47,9 +47,9 @@ jobs:
           java-version: 1.8
 
       - name: Decode API app-id
-          env:
-            DUMMY_API_ID: ${{ secrets.DUMMY_API_ID }}
-          run: echo dummy.api.app.id="DUMMY_API_ID" >> ./local.properties
+        env:
+          DUMMY_API_ID: ${{ secrets.DUMMY_API_ID }}
+        run: echo dummy.api.app.id="DUMMY_API_ID" >> ./local.properties
 
       - uses: actions/cache@v2
         with:
@@ -72,9 +72,9 @@ jobs:
           java-version: 1.8
 
       - name: Decode API app-id
-          env:
-            DUMMY_API_ID: ${{ secrets.DUMMY_API_ID }}
-          run: echo dummy.api.app.id="DUMMY_API_ID" >> ./local.properties
+        env:
+          DUMMY_API_ID: ${{ secrets.DUMMY_API_ID }}
+        run: echo dummy.api.app.id="DUMMY_API_ID" >> ./local.properties
 
       - uses: actions/cache@v2
         with:
@@ -97,9 +97,9 @@ jobs:
           java-version: 1.8
 
       - name: Decode API app-id
-          env:
-            DUMMY_API_ID: ${{ secrets.DUMMY_API_ID }}
-          run: echo dummy.api.app.id="DUMMY_API_ID" >> ./local.properties
+        env:
+          DUMMY_API_ID: ${{ secrets.DUMMY_API_ID }}
+        run: echo dummy.api.app.id="DUMMY_API_ID" >> ./local.properties
 
       - uses: actions/cache@v2
         with:
