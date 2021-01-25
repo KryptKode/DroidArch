@@ -27,7 +27,7 @@ class GetUserDetailUseCase @Inject constructor(
     fun execute(userId: String): Flow<UserDetail> {
         return dao.getUserByIdAsFlow(userId)
             .flatMapMerge {
-                if (it.phone.isEmpty()) {
+                if (it.noDetails) {
                     val remoteUser = usersServiceApi.getUserDetails(userId)
                     dao.update(responseDbMapper.mapToEntity(remoteUser))
                     dao.getUserByIdAsFlow(userId)
