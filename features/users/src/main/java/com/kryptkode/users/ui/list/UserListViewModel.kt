@@ -3,7 +3,6 @@ package com.kryptkode.users.ui.list
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import androidx.paging.ExperimentalPagingApi
 import androidx.paging.cachedIn
 import com.kryptkode.commonandroid.flowbinding.asFlow
 import com.kryptkode.users.domain.GetUsersUseCase
@@ -12,7 +11,6 @@ import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.flow.scan
 
-@OptIn(ExperimentalPagingApi::class)
 class UserListViewModel @ViewModelInject constructor(
     getUsersUseCase: GetUsersUseCase
 ) : ViewModel() {

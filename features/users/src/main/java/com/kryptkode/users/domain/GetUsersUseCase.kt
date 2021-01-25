@@ -1,6 +1,5 @@
 package com.kryptkode.users.domain
 
-import androidx.paging.ExperimentalPagingApi
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
@@ -22,7 +21,6 @@ class GetUsersUseCase @Inject constructor(
     private val userMapper: UserMapper
 ) {
 
-    @ExperimentalPagingApi
     fun getUsers(): Flow<PagingData<User>> {
         return Pager(
             config = PagingConfig(

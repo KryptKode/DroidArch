@@ -1,7 +1,6 @@
 package com.kryptkode.core.remote.mediator
 
 import androidx.annotation.VisibleForTesting
-import androidx.paging.ExperimentalPagingApi
 import androidx.paging.LoadType
 import androidx.paging.PagingState
 import androidx.paging.RemoteMediator
@@ -20,7 +19,6 @@ import retrofit2.HttpException
 
 private const val STARTING_PAGE_INDEX = 0
 
-@OptIn(ExperimentalPagingApi::class)
 class UserRemoteMediator @Inject constructor(
     @Named(MockApiServer.NAME)
     private val service: UsersServiceApi,
