@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/users_list">
+
+    <fragment
+        android:id="@+id/users_list"
+        android:name="com.kryptkode.users.ui.list.UserListFragment"
+        tools:layout="@layout/layout_users" >
+        <action
+            android:id="@+id/action_users_list_to_userDetailFragment"
+            app:destination="@id/userDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userDetailFragment"
+        android:name="com.kryptkode.users.ui.detail.UserDetailFragment"
+        android:label="UserDetailFragment" />
+
+
+</navigation>

@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">SwahPee</string>
+    <string name="app_name">DroidArch</string>
+    <string name="use_mock_server">Use mock server</string>
+    <string name="use_real_server">Use real server</string>
 </resources>
