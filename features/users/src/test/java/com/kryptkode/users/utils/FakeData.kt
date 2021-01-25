@@ -7,13 +7,17 @@ import com.kryptkode.users.model.UserDetail
 import com.kryptkode.users.model.UserLocation
 import java.util.Calendar
 import java.util.Date
+import java.util.TimeZone
 
 object FakeData {
 
     const val SAMPLE_DATE = "Mar 12, 1974"
     const val SAMPLE_DATE_TIME = "Mar 12, 1974 21:15 PM"
 
+    val defaultTimeZone: TimeZone = TimeZone.getTimeZone("UTC")
+
     val fakeDate: Date = Calendar.getInstance().apply {
+        timeZone = defaultTimeZone
         set(Calendar.YEAR, 1974)
         set(Calendar.MONTH, 2)
         set(Calendar.DAY_OF_MONTH, 12)

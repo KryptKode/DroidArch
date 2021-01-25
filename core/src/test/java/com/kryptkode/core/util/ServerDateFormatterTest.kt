@@ -4,7 +4,6 @@ import com.google.common.truth.Truth.assertThat
 import com.kryptkode.core.utils.FakeDataFactory
 import com.kryptkode.core.utils.FakeDataFactory.SAMPLE_DATE
 import com.kryptkode.core.utils.FakeDataFactory.defaultTimeZone
-import java.util.TimeZone
 import org.junit.Before
 import org.junit.Test
 

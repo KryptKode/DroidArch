@@ -38,7 +38,7 @@ class UserDetailMapperTest {
         assertThat(result.gender).isEqualTo(userDetail.gender)
         assertThat(locationMapper.mapToEntity(result.location)).isEqualTo(userDetail.location)
         assertThat(dateTimeFormatter.parseDisplayedDate(result.registerDate)!!.time)
-            .isEqualTo(132351300000)
+            .isEqualTo(132354900000)
         assertThat(dateFormatter.parseDisplayedDate(result.dateOfBirth)!!.time)
             .isEqualTo(132274800000)
     }

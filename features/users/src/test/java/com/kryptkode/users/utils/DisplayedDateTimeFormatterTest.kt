@@ -10,7 +10,7 @@ class DisplayedDateTimeFormatterTest {
 
     @Before
     fun setUp() {
-        sut = DisplayedDateTimeFormatter()
+        sut = DisplayedDateTimeFormatter(FakeData.defaultTimeZone)
     }
 
     @Test
@@ -18,7 +18,7 @@ class DisplayedDateTimeFormatterTest {
         val testDate = FakeData.SAMPLE_DATE_TIME
 
         val result = sut.parseDisplayedDate(testDate)
-        assertThat(result?.time).isEqualTo(132351300000)
+        assertThat(result?.time).isEqualTo(132354900000)
     }
 
     @Test

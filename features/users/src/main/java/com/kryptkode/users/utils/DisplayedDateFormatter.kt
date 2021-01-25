@@ -4,11 +4,15 @@ import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
-import javax.inject.Inject
+import java.util.TimeZone
 import timber.log.Timber
 
-class DisplayedDateFormatter @Inject constructor() {
-    private val displayedDateFormatter = SimpleDateFormat("MMM d, yyyy", Locale.ENGLISH)
+class DisplayedDateFormatter constructor(
+    private val displayTimeZone: TimeZone = TimeZone.getDefault()
+) {
+    private val displayedDateFormatter = SimpleDateFormat("MMM d, yyyy", Locale.ENGLISH).apply {
+        timeZone = displayTimeZone
+    }
 
     fun formatToDisplayedDate(date: Date?): String {
         return if (date == null) {
