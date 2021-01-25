@@ -37,3 +37,27 @@ private class LifecycleBoundObserver(private val flow: Flow<*>) : DefaultLifecyc
         job = null
     }
 }
+
+private class LifecycleBoundCachedObserver(private val flow: Flow<*>) : DefaultLifecycleObserver {
+    private var job: Job? = null
+
+    override fun onStart(owner: LifecycleOwner) {
+        job = flow
+            .launchIn(owner.lifecycleScope)
+    }
+
+    override fun onStop(owner: LifecycleOwner) {
+        cancelJob()
+    }
+
+    override fun onDestroy(owner: LifecycleOwner) {
+        super.onDestroy(owner)
+        owner.lifecycle.removeObserver(this)
+        cancelJob()
+    }
+
+    private fun cancelJob() {
+        job?.cancel()
+        job = null
+    }
+}

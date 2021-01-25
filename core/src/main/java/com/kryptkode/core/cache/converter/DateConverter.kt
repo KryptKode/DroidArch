@@ -1,20 +1,25 @@
 package com.kryptkode.core.cache.converter
 
 import androidx.room.TypeConverter
-import java.text.SimpleDateFormat
+import java.util.Calendar
 import java.util.Date
-import java.util.Locale
 
 object DateConverter {
-
-    @JvmStatic
-    val formatter = SimpleDateFormat("yyyyMMddHHmmss", Locale.ENGLISH)
+    private const val DEFAULT_STAMP = 0L
 
     @TypeConverter
     @JvmStatic
-    fun toDate(text: String): Date = formatter.parse(text)!!
+    fun toDate(timeStamp: Long): Date? {
+        if (timeStamp == DEFAULT_STAMP) {
+            return null
+        }
+
+        val calendar = Calendar.getInstance()
+        calendar.timeInMillis = timeStamp
+        return calendar.time
+    }
 
     @TypeConverter
     @JvmStatic
-    fun toText(date: Date): String = formatter.format(date)
+    fun toText(date: Date?): Long = date?.time ?: DEFAULT_STAMP
 }

@@ -7,11 +7,15 @@ object BuildModules {
     const val navigation = ":navigation"
 
     object Features {
-        const val home = ":features:home"
+        const val users = ":features:users"
     }
 
-    object Commons {
+    object Common {
         const val testShared = ":common:testShared"
         const val androidShared = ":common:androidShared"
+    }
+
+    object Libs{
+        const val baseMvi = ":libs:basemvi"
     }
 }
