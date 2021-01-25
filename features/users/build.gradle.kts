@@ -56,4 +56,5 @@ dependencies {
     testImplementation(Libs.core_testing)
     testImplementation(Libs.kotlinx_coroutines_test)
     testImplementation(Libs.truth)
+    testImplementation("app.cash.turbine:turbine:0.3.0")
 }
