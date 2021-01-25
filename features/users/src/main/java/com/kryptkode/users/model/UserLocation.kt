@@ -5,9 +5,9 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class UserLocation(
-    val state: String,
-    val street: String,
-    val city: String,
-    val timezone: String,
-    val country: String,
+    val state: String = "",
+    val street: String = "",
+    val city: String = "",
+    val timezone: String = "",
+    val country: String = "",
 ) : Parcelable

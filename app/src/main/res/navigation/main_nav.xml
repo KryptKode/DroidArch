@@ -9,7 +9,14 @@
         android:id="@+id/users_list"
         android:name="com.kryptkode.users.ui.list.UserListFragment"
         tools:layout="@layout/layout_users" >
+        <action
+            android:id="@+id/action_users_list_to_userDetailFragment"
+            app:destination="@id/userDetailFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/userDetailFragment"
+        android:name="com.kryptkode.users.ui.detail.UserDetailFragment"
+        android:label="UserDetailFragment" />
 
 
 </navigation>

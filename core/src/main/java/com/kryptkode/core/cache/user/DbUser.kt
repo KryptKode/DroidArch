@@ -19,9 +19,20 @@ data class DbUser(
     @ColumnInfo(name = COLUMN_GENDER) val gender: String = "",
     @ColumnInfo(name = COLUMN_PHONE) val phone: String = "",
     @ColumnInfo(name = COLUMN_LOCATION) val location: Location = Location(),
-    @ColumnInfo(name = COLUMN_REGISTRATION_DATE) val registerDate: Date? = Date(),
-    @ColumnInfo(name = COLUMN_DATE_OF_BIRTH) val dateOfBirth: Date? = Date(),
+    @ColumnInfo(name = COLUMN_REGISTRATION_DATE) val registerDate: Date? = null,
+    @ColumnInfo(name = COLUMN_DATE_OF_BIRTH) val dateOfBirth: Date? = null,
 ) {
+
+    val noDetails: Boolean
+        get() = phone.isEmpty() ||
+            gender.isEmpty() ||
+            registerDate == null ||
+            dateOfBirth == null ||
+            location.city.isEmpty() ||
+            location.state.isEmpty() ||
+            location.street.isEmpty() ||
+            location.timezone.isEmpty() ||
+            location.country.isEmpty()
 
     companion object {
         const val TABLE_NAME = "users"
